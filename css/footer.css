@@ -1,0 +1,31 @@
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+}
+.keyboard-row{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+}
+.keyboard-block{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 60px;
+    border-radius: 6px;
+    background-color: #d3d6da;
+    font-size: 20px;
+    font-weight: bold;
+}
+.key-etc{
+    font-size: 12px;
+    width: 65px;
+}
+.delete-img{
+    width: 26px;
+}
