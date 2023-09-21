@@ -20,6 +20,12 @@ function appStart(){
     }
 
     const nextLine = () => {
+        const row = document.querySelector(`.row-${attempts}`);
+        for (let i = 0; i < row.length; i++) {
+            row.children[i].setAttribute('class', 'moving');
+        }
+        
+         
         if(attempts === 6) return gameover();
         attempts += 1;
         index = 0;
@@ -39,7 +45,7 @@ function appStart(){
             const answerWord = answer[i];
             if(input === answerWord){
                 correctNums++;
-                block.style.background = '#6aaa64';
+                block.style.background = '#6aaa64';    // 정답 맞출 때 createElement class 추가
             }
             else if(answer.includes(input)) block.style.background = '#c9b458';
             else block.style.background = '#787c7e'; 
@@ -53,6 +59,8 @@ function appStart(){
         const key = e.key.toUpperCase();
         const keyCode = e.keyCode;
         const thisBlock = document.querySelector(`.board-block[data-index="${attempts}${index}"]`);
+    
+        
 
         if(e.key === 'Backspace') handleBackspace();
         else if(index === 5) {
@@ -64,23 +72,30 @@ function appStart(){
             index++;
         }
     }
-   
-    const clickEvnt = (e) => {
+
+    
+    const clickKey = (e) => {
         const thisBlock = document.querySelector(`.board-block[data-index="${attempts}${index}"]`);
-        
-        if(index === 5) {
-            if(e.key === 'Enter') handleEnterKey();
+        const dataKey = e.target.dataset.key;
+
+        if(dataKey === 'BACK') handleBackspace();
+        else if(index === 5) {
+            if(dataKey === 'ENTER') handleEnterKey();
             else return;
-        }else{
+        }
+        else if(dataKey.length < 2){
             thisBlock.innerText = e.target.innerText;
-            index++
+            index++;
         }
     }
     
     const keyBlocks = document.querySelectorAll('.keyboard-block');
     for(let keyBlock of keyBlocks){
-        keyBlock.addEventListener('click', clickEvnt);
+        keyBlock.addEventListener('click', clickKey);
     }
+
+
+
     
 
     const startTime = new Date();
