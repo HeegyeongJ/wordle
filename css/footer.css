@@ -26,6 +26,10 @@ footer{
     font-size: 12px;
     width: 65px;
 }
-.delete-img{
-    width: 26px;
+
+#backspace{
+    background-image: url(../assets/delete.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
 }
