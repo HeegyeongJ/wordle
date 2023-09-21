@@ -1,0 +1,41 @@
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 60px;
+    border-bottom: 1px solid #d3d6da;
+}
+.menu{
+    width: 26px;
+    height: 26px;
+}
+h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Gloock', serif;
+    font-size: 36px;
+    text-align: center;
+}
+.header-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgs-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 35px;
+    height: 35px;
+}
+.subscribe-btn{
+    border: 1px solid #000;
+    border-radius: 30px;
+    background: none;
+    padding: 8px 20px;
+    margin-left: 30px;
+}
